@@ -148,7 +148,7 @@ function raspellab_scripts() {
 	//wp_style_add_data( 'raspellab-style', 'rtl', 'replace' );
 
 	// Main style temp
-	wp_enqueue_style( 'raspellab-style-temp', get_stylesheet_uri(), array(), filemtime(get_template_directory() . '/assets/css/style.css') );
+	wp_enqueue_style( 'raspellab-style-temp', get_template_directory_uri() . '/assets/css/style.css', array(), filemtime(get_template_directory() . '/assets/css/style.css') );
 
 	wp_enqueue_script( 'raspellab-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 
