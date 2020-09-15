@@ -1,20 +1,20 @@
 === my_first_theme_for-block ===
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-Requires at least: 4.5
-Tested up to: 5.4
+Contributors: Dmitriy Raspel
+Requires at least: 4.7
+Tested up to: 5.5
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called my_first_theme_for-block.
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
 
 == Description ==
 
-какое-то описание my first theme
+my_first_theme_for-block is a beautiful Gutenberg WordPress theme for architect, designer and content marketers
+
 
 == Installation ==
 
@@ -26,12 +26,15 @@ A starter theme called my_first_theme_for-block.
 
 = Does this theme support any plugins? =
 
+Добавить плагин для проектов
+
 my_first_theme_for-block includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
-* Initial release
+
+= 1.0.0 =
+* Released: ---
 
 == Credits ==
 
