@@ -30,7 +30,7 @@ if ( ! function_exists( 'raspellab_setup' ) ) :
 		load_theme_textdomain( 'raspellab', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+		//add_theme_support( 'automatic-feed-links' );
 
 		/*
 		 * Let WordPress manage the document title.
@@ -47,10 +47,12 @@ if ( ! function_exists( 'raspellab_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
+		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'raspellab' ),
+				'primary' => __( 'Primary Navigation', 'raspellab' ),
+				'social' => __( 'Social Links Navigation', 'raspellab' ),
+				'footer' => __( 'Footer Navigation', 'raspellab' ),
 			)
 		);
 
@@ -71,7 +73,7 @@ if ( ! function_exists( 'raspellab_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
+		/* Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',
 			apply_filters(
@@ -82,6 +84,8 @@ if ( ! function_exists( 'raspellab_setup' ) ) :
 				)
 			)
 		);
+		*/
+
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -94,10 +98,10 @@ if ( ! function_exists( 'raspellab_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
+				'height'      => 240,
+				'width'       => 240,
+				'flex-width'  => false,
+				'flex-height' => false,
 			)
 		);
 	}
@@ -112,7 +116,7 @@ add_action( 'after_setup_theme', 'raspellab_setup' );
  * @global int $content_width
  */
 function raspellab_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'raspellab_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'raspellab_content_width', 720 );
 }
 add_action( 'after_setup_theme', 'raspellab_content_width', 0 );
 
@@ -124,9 +128,9 @@ add_action( 'after_setup_theme', 'raspellab_content_width', 0 );
 function raspellab_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'raspellab' ),
+			'name'          => __( 'Footer', 'raspellab' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'raspellab' ),
+			'description'   => __( 'Add widgets here for displayed in the footer.', 'raspellab' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -140,10 +144,13 @@ add_action( 'widgets_init', 'raspellab_widgets_init' );
  * Enqueue scripts and styles.
  */
 function raspellab_scripts() {
-	wp_enqueue_style( 'raspellab-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'raspellab-style', 'rtl', 'replace' );
+	// wp_enqueue_style( 'raspellab-style', get_stylesheet_uri(), array(), _S_VERSION );
+	//wp_style_add_data( 'raspellab-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'raspellab-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	// Main style temp
+	wp_enqueue_style( 'raspellab-style', get_stylesheet_uri(), array(), filemtime(get_template_directory() . '/style.css') );
+
+	wp_enqueue_script( 'raspellab-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -151,10 +158,6 @@ function raspellab_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'raspellab_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
