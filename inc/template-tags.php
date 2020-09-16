@@ -77,7 +77,22 @@ if ( ! function_exists( 'raspellab_comment_link' ) ) :
 		}
 	}
 endif;
-///
+
+// Categories.
+function raspellab_category_list() {
+	/* translators: used between list items, there is a space after the comma. */
+	$categories_list = get_the_category_list( esc_html__( ', ', 'raspellab' ) );
+	if ( $categories_list ) {
+		printf(
+			/* translators: 1: SVG icon. 2: Posted in - screen reader text. 3: List of categories. */
+			'<span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
+			raspellab_get_icon_svg( 'category', 16 ),
+			esc_html__( 'Posted in', 'raspellab' ),
+			$categories_list
+		); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+}
+//
 
 if ( ! function_exists( 'raspellab_entry_footer' ) ) :
 	/**
@@ -87,11 +102,16 @@ if ( ! function_exists( 'raspellab_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'raspellab' ) );
-			if ( $categories_list ) {
+			// $categories_list = get_the_category_list( esc_html__( ', ', 'raspellab' ) );
+			// if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'raspellab' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
+			// 	printf( 
+			// 		'<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'raspellab' ) . '</span>',
+			// 		raspellab_get_icon_svg('category', 16),
+
+			// 		$categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			// }
+			raspellab_category_list();
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'raspellab' ) );
