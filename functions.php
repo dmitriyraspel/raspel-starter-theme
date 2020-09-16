@@ -170,6 +170,18 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
+ * SVG Icons class.
+ */
+require get_template_directory() . '/classes/class-raspellab-svg-icons.php';
+
+/**
+ * SVG Icons related functions.
+ */
+require get_template_directory() . '/inc/icon-functions.php';
+
+
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
