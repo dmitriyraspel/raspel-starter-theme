@@ -92,7 +92,21 @@ function raspellab_category_list() {
 		); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
-//
+
+// Tags.
+function raspellab_tag_list() {
+	/* translators: used between list items, there is a space after the comma. */
+	$tags_list = get_the_tag_list( '', __( ', ', 'raspellab' ) );
+	if ( $tags_list ) {
+		printf(
+			/* translators: 1: SVG icon. 2: Posted in - screen reader text. 3: List of tags. */
+			'<span class="tags-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
+			raspellab_get_icon_svg( 'tag', 16 ),
+			__( 'Tags:', 'raspellab' ),
+			$tags_list
+		); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+}
 
 if ( ! function_exists( 'raspellab_entry_footer' ) ) :
 	/**
@@ -105,12 +119,9 @@ if ( ! function_exists( 'raspellab_entry_footer' ) ) :
 			// Categories.
 			raspellab_category_list();
 
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'raspellab' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'raspellab' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
+			// Tags.
+			raspellab_tag_list();
+
 		}
 
 		// Comment link.
