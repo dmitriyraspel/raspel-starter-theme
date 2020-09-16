@@ -101,16 +101,8 @@ if ( ! function_exists( 'raspellab_entry_footer' ) ) :
 	function raspellab_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			// $categories_list = get_the_category_list( esc_html__( ', ', 'raspellab' ) );
-			// if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-			// 	printf( 
-			// 		'<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'raspellab' ) . '</span>',
-			// 		raspellab_get_icon_svg('category', 16),
-
-			// 		$categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			// }
+			
+			// Categories.
 			raspellab_category_list();
 
 			/* translators: used between list items, there is a space after the comma */
