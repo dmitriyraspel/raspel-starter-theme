@@ -41,17 +41,50 @@ if ( ! function_exists( 'raspellab_posted_by' ) ) :
 	 * Prints HTML with meta information for the current author.
 	 */
 	function raspellab_posted_by() {
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'raspellab' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		printf(
+			/* translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link. */
+			'<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>',
+			raspellab_get_icon_svg( 'person', 16 ),
+			__( 'Posted by', 'raspellab' ),
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_html( get_the_author() )
 		);
-
-		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
 	}
 endif;
+///////
+//if ( ! function_exists( 'twentynineteen_posted_by' ) ) :
+	/**
+	 * Prints HTML with meta information about author.
+	 */
+// 	function twentynineteen_posted_by() {
+// 		printf(
+// 			/* translators: 1: SVG icon. 2: Post author, only visible to screen readers. 3: Author link. */
+// 			'<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>',
+// 			twentynineteen_get_icon_svg( 'person', 16 ),
+// 			__( 'Posted by', 'twentynineteen' ),
+// 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+// 			esc_html( get_the_author() )
+// 		);
+// 	}
+// endif;
+///////
 
+//if ( ! function_exists( 'seedlet_posted_by' ) ) :
+	/**
+	 * Prints HTML with meta information about theme author.
+	 */
+// 	function seedlet_posted_by() {
+// 		printf(
+// 			/* translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link. */
+// 			'<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>',
+// 			seedlet_get_icon_svg( 'person', 16 ),
+// 			__( 'Posted by', 'seedlet' ),
+// 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+// 			esc_html( get_the_author() )
+// 		);
+// 	}
+// endif;
+/////
 if ( ! function_exists( 'raspellab_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
