@@ -6,6 +6,14 @@
  *
  * @package my_first_theme_for-block
  */
+/**
+ * Table of Contents:
+ * Logo & Description - добавить
+ * posted_on (date published)
+ * posted_by (author)
+ * 
+ * post_thumbnail
+ */
 
 if ( ! function_exists( 'raspellab_posted_on' ) ) :
 	/**
@@ -51,40 +59,26 @@ if ( ! function_exists( 'raspellab_posted_by' ) ) :
 		);
 	}
 endif;
-///////
-//if ( ! function_exists( 'twentynineteen_posted_by' ) ) :
-	/**
-	 * Prints HTML with meta information about author.
-	 */
-// 	function twentynineteen_posted_by() {
-// 		printf(
-// 			/* translators: 1: SVG icon. 2: Post author, only visible to screen readers. 3: Author link. */
-// 			'<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>',
-// 			twentynineteen_get_icon_svg( 'person', 16 ),
-// 			__( 'Posted by', 'twentynineteen' ),
-// 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-// 			esc_html( get_the_author() )
-// 		);
-// 	}
-// endif;
-///////
 
-//if ( ! function_exists( 'seedlet_posted_by' ) ) :
+// Comments link.
+if ( ! function_exists( 'raspellab_comment_link' ) ) :
 	/**
-	 * Prints HTML with meta information about theme author.
+	 * Prints HTML with the comment link for the current post.
 	 */
-// 	function seedlet_posted_by() {
-// 		printf(
-// 			/* translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link. */
-// 			'<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>',
-// 			seedlet_get_icon_svg( 'person', 16 ),
-// 			__( 'Posted by', 'seedlet' ),
-// 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-// 			esc_html( get_the_author() )
-// 		);
-// 	}
-// endif;
-/////
+	function raspellab_comment_link() {
+		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			echo raspellab_get_icon_svg( 'comment', 16 );
+
+			/* translators: %s: Name of current post. Only visible to screen readers. */
+			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'raspellab' ), get_the_title() ) );
+
+			echo '</span>';
+		}
+	}
+endif;
+///
+
 if ( ! function_exists( 'raspellab_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
@@ -107,25 +101,12 @@ if ( ! function_exists( 'raspellab_entry_footer' ) ) :
 			}
 		}
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'raspellab' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				)
-			);
-			echo '</span>';
+		// Comment link.
+		if ( ! is_single($post) ) {
+			raspellab_comment_link();
 		}
 
+		// Edit post link.
 		edit_post_link(
 			sprintf(
 				wp_kses(
@@ -139,7 +120,7 @@ if ( ! function_exists( 'raspellab_entry_footer' ) ) :
 				),
 				wp_kses_post( get_the_title() )
 			),
-			'<span class="edit-link">',
+			'<span class="edit-link">' . raspellab_get_icon_svg( 'edit', 16 ),
 			'</span>'
 		);
 	}

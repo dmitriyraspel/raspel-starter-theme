@@ -45,7 +45,7 @@
 					),
 					wp_kses_post( get_the_title() )
 				),
-				'<span class="edit-link">',
+				'<span class="edit-link">' . raspellab_get_icon_svg( 'edit', 16 ),
 				'</span>'
 			);
 			?>
