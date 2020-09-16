@@ -12,14 +12,23 @@
  * @return array
  */
 function raspellab_body_classes( $classes ) {
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
+	
+	if ( is_singular() ) {
+		// Adds `singular` to singular pages.
+		$classes[] = 'singular';
+	} else {
+		// Adds `hfeed` to non singular pages.
 		$classes[] = 'hfeed';
 	}
 
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';
+	// Add body class if main navigation is active.
+	if ( has_nav_menu( 'primary' ) ) {
+		$classes[] = 'has-main-navigation';
+	}
+
+	// Add body class if page has full-width content.
+	if ( is_page_template( array( 'templates/template-full-width.php' ) ) ) {
+		$classes[] = 'has-full-width-content';
 	}
 
 	return $classes;
