@@ -24,7 +24,9 @@
 				<?php
 				raspellab_posted_on();
 				raspellab_posted_by();
-				raspellab_comment_link();
+				// raspellab_category_list();
+				// raspellab_tag_list();
+				// raspellab_comment_link();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

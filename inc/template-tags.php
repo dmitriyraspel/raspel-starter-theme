@@ -125,9 +125,8 @@ if ( ! function_exists( 'raspellab_entry_footer' ) ) :
 		}
 
 		// Comment link.
-		if ( ! is_single($post) ) {
 			raspellab_comment_link();
-		}
+		
 
 		// Edit post link.
 		edit_post_link(
