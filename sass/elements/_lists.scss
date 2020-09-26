@@ -1,6 +1,6 @@
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0;
 }
 
 ul {
@@ -14,11 +14,12 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 0;
+	padding-left: $list-padding;
 }
 
 dt {
-	font-weight: 700;
+	font-weight: 600;
 }
 
 dd {
