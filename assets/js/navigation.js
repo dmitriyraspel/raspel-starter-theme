@@ -12,7 +12,7 @@
 		return;
 	}
 
-	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
+	const button = document.getElementById( 'menu-toggle' );
 
 	// Return early if the button don't exist.
 	if ( 'undefined' === typeof button ) {
@@ -34,9 +34,11 @@
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
 	button.addEventListener( 'click', function() {
 		siteNavigation.classList.toggle( 'toggled' );
+		document.body.classList.add( 'nav-open' );
 
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
 			button.setAttribute( 'aria-expanded', 'false' );
+			document.body.classList.remove('nav-open');
 		} else {
 			button.setAttribute( 'aria-expanded', 'true' );
 		}
@@ -48,6 +50,7 @@
 
 		if ( ! isClickInside ) {
 			siteNavigation.classList.remove( 'toggled' );
+			document.body.classList.remove( 'nav-open' );
 			button.setAttribute( 'aria-expanded', 'false' );
 		}
 	} );
