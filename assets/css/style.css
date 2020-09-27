@@ -606,17 +606,17 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #4169e1;
+  color: #5a695b;
   -webkit-transition: all 0.25s linear;
   transition: all 0.25s linear;
 }
 
 a:visited {
-  color: #800080;
+  color: #5a695b;
 }
 
 a:hover, a:focus, a:active {
-  color: #191970;
+  color: #adc7af;
 }
 
 a:focus {
@@ -1208,7 +1208,11 @@ button.menu-toggle {
 /* Widgets
 --------------------------------------------- */
 .widget {
-  margin: 0 0 1.5em;
+  margin: 0 0 20px;
+}
+
+.widget h2 {
+  font-size: 1.44em;
 }
 
 .widget select {
@@ -1359,6 +1363,13 @@ button.menu-toggle {
   margin-top: 20px;
 }
 
+.site-footer .footer__widget-area {
+  width: calc(100% - 40px);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .site-footer .site-info {
   width: calc(100% - 40px);
   max-width: 1168px;
@@ -1391,6 +1402,20 @@ button.menu-toggle {
 --------------------------------------------- */
 .sticky {
   display: block;
+}
+
+.entry-header {
+  width: calc(100% - 40px);
+  max-width: 1168px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.entry-footer {
+  width: calc(100% - 40px);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .updated:not(.published) {
@@ -1437,4 +1462,28 @@ button.menu-toggle {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5em;
+}
+
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator) {
+  width: calc(100% - 40px);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.entry-content > *:first-child {
+  margin-top: 0;
+}
+
+.entry-content > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Wide */
+.alignwide {
+  width: calc(100% - 40px);
+  max-width: 1168px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
