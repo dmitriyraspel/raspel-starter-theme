@@ -2,16 +2,6 @@
 	display: block;
 }
 
-.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator) {
-	@include container-content;
-}
-.entry-content > *:first-child {
-	margin-top: 0;
-}
-.entry-content > *:last-child {
-	margin-bottom: 0;
-}
-
 .entry-header {
 	@include container;
 }

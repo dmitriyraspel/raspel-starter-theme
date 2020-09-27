@@ -90,6 +90,9 @@ if ( ! function_exists( 'raspellab_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
 		/**
 		 * Add support for core custom logo.
 		 *
