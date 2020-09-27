@@ -40,6 +40,10 @@
       }
    }
 
+   .footer__widget-area {
+      @include container-content;
+   }
+   
    .site-info {
       @include container;
       margin-top: $header-margin;
