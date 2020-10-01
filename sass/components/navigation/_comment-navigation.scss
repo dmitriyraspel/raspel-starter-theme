@@ -1,22 +1,42 @@
-
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+	@include center-block;
+	width: $content__width;
+	max-width: $container_width;
+	margin-top: 1.5 * $main-spacing;
+	margin-bottom: 1.5 * $main-spacing;
 
-	.site-main & {
-		margin: 0 0 1.5em;
+	.nav-previous,
+	.nav-next {
+		margin-top: 1em;
 	}
 
 	.nav-links {
 		display: flex;
+		flex-wrap: wrap;
 	}
 
-	.nav-previous {
-		flex: 1 0 50%;
+	a {
+		text-decoration: none;
+	}
+	
+	span.nav-subtitle {
+		color: $color__currentColor;
 	}
 
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
+	@media screen and (min-width: $tablet-screen) {
+		margin-top: 1.5 * $main-spacing;
+		margin-bottom: 1.5 * $main-spacing;
+		
+		.nav-previous {
+			flex: 1 0 50%;
+		}
+	
+		.nav-next {
+			text-align: end;
+			flex: 1 0 50%;
+		}	
 	}
+
 }
