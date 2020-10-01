@@ -1,9 +1,7 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-	@include center-block;
-	width: $content__width;
-	max-width: $container_width;
+	@include container;
 	margin-top: 1.5 * $main-spacing;
 	margin-bottom: 1.5 * $main-spacing;
 
@@ -38,5 +36,8 @@
 			flex: 1 0 50%;
 		}	
 	}
-
+}
+.single .comment-navigation,
+.single .post-navigation {
+	max-width: $content__width;
 }
