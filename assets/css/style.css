@@ -1145,11 +1145,10 @@ button.menu-toggle {
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-  display: block;
+  width: calc(100% - 40px);
+  max-width: 1168px;
   margin-left: auto;
   margin-right: auto;
-  width: 720px;
-  max-width: calc(100% - 40px);
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -1207,6 +1206,11 @@ button.menu-toggle {
         -ms-flex: 1 0 50%;
             flex: 1 0 50%;
   }
+}
+
+.single .comment-navigation,
+.single .post-navigation {
+  max-width: 720px;
 }
 
 .modal-menu-wrap {
@@ -1452,18 +1456,44 @@ button.menu-toggle {
 
 /* Posts and pages
 --------------------------------------------- */
-.sticky {
-  display: block;
+.page .entry-header {
+  width: calc(100% - 40px);
+  max-width: 1168px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.entry-header {
+.page .post-thumbnail {
+  width: calc(100% - 40px);
+  max-width: 1168px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 720px) {
+  .page .post-thumbnail {
+    margin-top: 68px;
+    margin-bottom: 68px;
+  }
+}
+
+.page .page-header {
+  width: calc(100% - 40px);
+  max-width: 1168px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.single .entry-header {
   width: calc(100% - 40px);
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.post-thumbnail {
+.single .post-thumbnail {
   width: calc(100% - 40px);
   max-width: 720px;
   margin-left: auto;
@@ -1473,7 +1503,7 @@ button.menu-toggle {
 }
 
 @media screen and (min-width: 720px) {
-  .post-thumbnail {
+  .single .post-thumbnail {
     margin-top: 68px;
     margin-bottom: 68px;
   }
@@ -1485,7 +1515,7 @@ button.menu-toggle {
 
 .entry-footer {
   width: calc(100% - 40px);
-  max-width: 720px;
+  max-width: 1168px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 32px;
@@ -1497,6 +1527,63 @@ button.menu-toggle {
 @media screen and (min-width: 720px) {
   .entry-footer {
     margin-top: 68px;
+  }
+}
+
+.single .entry-footer {
+  max-width: 720px;
+}
+
+.blog .site-main > header,
+.archive .page-header {
+  width: calc(100% - 40px);
+  max-width: 1168px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 720px) {
+  .blog .site-main > header,
+  .archive .page-header {
+    margin-top: 68px;
+    margin-bottom: 68px;
+  }
+}
+
+.blog .site-main > article,
+.archive .site-main > article {
+  width: calc(100% - 40px);
+  max-width: 1168px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error404 .site-main {
+  width: calc(100% - 40px);
+  max-width: 1168px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sticky {
+  display: block;
+}
+
+.post-thumbnail {
+  width: calc(100% - 40px);
+  max-width: 1168px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 720px) {
+  .post-thumbnail {
+    margin-top: 68px;
+    margin-bottom: 68px;
   }
 }
 

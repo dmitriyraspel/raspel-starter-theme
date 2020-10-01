@@ -1,0 +1,20 @@
+.page {
+   
+   .entry-header {
+      @include container;
+   }
+   
+   .post-thumbnail {
+      @include container;
+      margin-top: 1.6 * $main-spacing;
+      margin-bottom: 1.6 * $main-spacing;
+      @media screen and (min-width: $content__width) {
+         margin-top: 3.4 * $main-spacing;
+         margin-bottom: 3.4 * $main-spacing;
+      }
+   }  
+   
+   .page-header {
+      @include container;
+   }
+}
