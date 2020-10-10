@@ -13,24 +13,58 @@
 function raspellab_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial(
-			'blogname',
-			array(
-				'selector'        => '.site-title a',
-				'render_callback' => 'raspellab_customize_partial_blogname',
-			)
-		);
-		$wp_customize->selective_refresh->add_partial(
-			'blogdescription',
-			array(
-				'selector'        => '.site-description',
-				'render_callback' => 'raspellab_customize_partial_blogdescription',
-			)
-		);
-	}
+	$wp_customize->selective_refresh->add_partial(
+		'blogname', array(
+			'selector'        => '.site-title a',
+			'render_callback' => 'raspellab_customize_partial_blogname',
+		)
+	);
+
+	$wp_customize->selective_refresh->add_partial(
+		'blogdescription', array(
+			'selector'        => '.site-description',
+			'render_callback' => 'raspellab_customize_partial_blogdescription',	
+		)
+	);
+
+	/* Display Logo and Title ---------------- */
+	
+	$wp_customize->add_setting(
+		'site_logo_and_title',
+		array(
+			'default'	=> '',
+		)
+	);
+
+	$wp_customize->add_control(
+		'site_logo_and_title',
+		array(
+			'type'        => 'checkbox',
+			'section'     => 'title_tagline',
+			'priority'    => 10,
+			'label'       => __( 'показывать логотип и заголовок', 'raspellab' ),
+		)
+	);
+
+	/* Display Title and description ---------------- */
+	$wp_customize->add_setting(
+		'site_title_and_description',
+		array(
+			'default'	=> '',
+		)
+	);
+
+	$wp_customize->add_control(
+		'site_title_and_description',
+		array(
+			'type'        => 'checkbox',
+			'section'     => 'title_tagline',
+			'priority'    => 11,
+			'label'       => __( 'показывать заголовок и описание', 'raspellab' ),
+		)
+	);
+
 }
 add_action( 'customize_register', 'raspellab_customize_register' );
 

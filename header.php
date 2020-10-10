@@ -26,49 +26,34 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'raspellab' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$raspellab_description = get_bloginfo( 'description', 'display' );
-			if ( $raspellab_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $raspellab_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		<div class="header__inner">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'raspellab' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+		<?php get_template_part( 'template-parts/header/site-branding' ); ?>
 
-		<?php if ( has_nav_menu( 'social' ) ) : ?>
-				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'raspellab' ); ?>">
+		<div class="header-navigation-wrapper">
+
+			<nav id="site-navigation" class="main-navigation">
+				<button id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'raspellab' ); ?></span>
+					<div class="burger">
+						<div class="burger__inner">
+							</div>
+						</div>
+					</button>
+					
 					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'social',
-							'link_before'    => '<span class="screen-reader-text">',
-							'link_after'     => '</span>' . raspellab_get_icon_svg( 'link' ),
-							'depth'          => 1,
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'primary',
+						'container_class' => 'primary-menu-container',
+						'menu_class'     	=> 'primary-menu reset-list-style',
+						// 'depth'          => '2',
 						)
 					);
 					?>
-				</nav><!-- .social-navigation -->
-			<?php endif; ?>
+			</nav><!-- #site-navigation -->
+						
+		</div><!-- /.header-navigation-wrapper -->	
+
+		</div><!-- /.header__inner -->
 	</header><!-- #masthead -->
