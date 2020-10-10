@@ -1,4 +1,28 @@
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
+@import "_logo";
+
+.site-header {
+	max-width: 100%;
+	position: relative;
+	z-index: 2;
+}
+
+.header__inner {
+	@include container;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 2 * $header-margin;
+	margin-bottom: 2 * $header-margin;
+	
+	@media screen and (min-width: $content__width) {
+		margin-top: 4 * $header-margin;
+		margin-bottom: 4 * $header-margin;
+		align-items: flex-start;
+	}
+}
+
+.header-navigation-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 }

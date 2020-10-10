@@ -1,5 +1,59 @@
+@import "abstracts/root";
+@import "abstracts/theme_mode";
 @import "abstracts/colors";
-@import "abstracts/typography";
-@import "abstracts/structure";
-@import "abstracts/columns";
 @import "abstracts/mixins";
+
+// stylelint-disable value-keyword-case
+$font__main: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+// stylelint-enable value-keyword-case
+$font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+$font-weight-600: 600;
+
+$font-size-14: 14px;
+$font-size-16: 16px;
+$font-size-18: 18px;
+$font-size-20: 20px;
+$font-h3: 1.44em;
+
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+//width
+$container_width: calc(100% - 40px);
+$content__width: 720px;
+$alignwide__width: 1168px;
+
+
+$header-margin: 20px;
+$main-spacing: 20px;
+$list-padding: calc(0.6 * 20px ); // calc(0.6 * var(--spacing-horizontal));
+$nav--padding: calc(0.8 * 20px ); // calc(0.8 * var(--spacing-horizontal));
+
+$tablet-screen: 720px;
+$desktop-screen: 1000px;
+
+$base-transition: all 0.2s ease;
+
+$columns: (
+	1: 100%,
+	2: 50%,
+	3: 33.33%,
+	4: 25%,
+	5: 20%,
+	6: 16.66%,
+	7: 14.28%,
+	8: 12.5%,
+	9: 11.11%
+);
+$columns__margin: 3.8%;
+
+@mixin test {
+	border: 1px solid red;
+	background: $color__background-ins;
+}
+@mixin test1 {
+	border: 1px solid red;
+}

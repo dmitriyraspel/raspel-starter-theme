@@ -1,5 +1,9 @@
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 $main-spacing;
+
+	h2 {
+		font-size: $font-h3;
+	}
 
 	// Make sure select elements fit in widgets.
 	select {

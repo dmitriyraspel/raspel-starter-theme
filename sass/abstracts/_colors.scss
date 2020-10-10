@@ -4,17 +4,33 @@ $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
+$color__background-sub-menu:#adc7af;
+$color__background-footer: #adc7af;
+
+$color__currentColor: #adc7af; // зеленый
 
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: #4169e1; //royalblue
-$color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
-$color__text-main: #404040;
+$color__link: #5a695b; //royalblue
+$color__link-visited: #5a695b; //purple
+$color__link-hover: #adc7af; //midnightblue
+$color__text-main: #404040; // #666666 #777777
+$color__social-link: #777777;
+$color__social-link-hover: $theme-mod-pink-accent;
+$color__footer-menu-link: #666;
+$color__footer-menu-link-hover: $color__currentColor;
+
+
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+
+$color__primary-nav: #305c43;
+$color__primary-nav-hover: #305c43;
+$color__footer-link: $color__text-main;
+$color__footer-link-hover: $color__currentColor;

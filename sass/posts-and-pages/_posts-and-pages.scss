@@ -1,11 +1,28 @@
+@import "_page";
+@import "_post";
+@import "_meta";
+@import "_archive";
+@import "_not-found";
+
+
 .sticky {
 	display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
+.entry-header {
+	@include container;
 }
+
+.post-thumbnail {
+	@include container;
+	margin-top: 1.6 * $main-spacing;
+	margin-bottom: 1.6 * $main-spacing;
+	@media screen and (min-width: $content__width) {
+		margin-top: 3.4 * $main-spacing;
+		margin-bottom: 3.4 * $main-spacing;
+	}
+}
+
 
 .updated:not(.published) {
 	display: none;
