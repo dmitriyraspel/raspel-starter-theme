@@ -10,9 +10,9 @@
 
 <?php
 	/* Show site logo ---------------------------------------------------- */
- if ( has_custom_logo() ) : ?>
-	<div class="site-logo"><?php the_custom_logo(); ?></div>
-<?php endif; ?>
+ 	if ( has_custom_logo() ) : 
+		the_custom_logo();
+	endif; ?>
 
 <?php
 	/* Show site title ---------------------------------------------------- */
