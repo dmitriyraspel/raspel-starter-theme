@@ -42,7 +42,8 @@
 }
 
 .nav-open .site-main,
-.nav-open .site-footer {
+.nav-open .site-footer,
+.nav-open .site-branding {
    filter: blur(6px);
    opacity: 0.6;
 }

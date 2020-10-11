@@ -10,14 +10,14 @@
 	@include container;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	margin-top: 2 * $header-margin;
+	align-items: flex-start;
+	margin-top: 2 * $header-margin; // 40 px
 	margin-bottom: 2 * $header-margin;
 	
 	@media screen and (min-width: $content__width) {
 		margin-top: 4 * $header-margin;
 		margin-bottom: 4 * $header-margin;
-		align-items: flex-start;
+		align-items: center;
 	}
 }
 
