@@ -16,11 +16,17 @@ input[type="color"],
 textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
+	border-radius: $radius-fields;
+	padding: $input-padding-vertical $input-padding-horizontal;
+	line-height: $font__line-height-button;
+	transition: $base-transition;
+	background: $color__background-input;
 
 	&:focus {
 		color: $color__text-input-focus;
+		outline: $color__border-input-focus;
+		border-color: $color__border-input-focus;
+		background: $color__background-body;
 	}
 }
 
@@ -31,3 +37,4 @@ select {
 textarea {
 	width: 100%;
 }
+

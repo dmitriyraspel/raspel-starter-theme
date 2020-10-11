@@ -13,10 +13,10 @@ $color__text-input: #666;
 $color__text-input-focus: #111;
 $color__link: #5a695b; //royalblue
 $color__link-visited: #5a695b; //purple
-$color__link-hover: #adc7af; //midnightblue
+$color__link-hover: #06d19c; //midnightblue
 $color__text-main: #404040; // #666666 #777777
 $color__social-link: #777777;
-$color__social-link-hover: $theme-mod-pink-accent;
+$color__social-link-hover: #06d19c;
 $color__footer-menu-link: #666;
 $color__footer-menu-link-hover: $color__currentColor;
 
@@ -28,8 +28,11 @@ $color__border-button: #06d19c;
 $color__border-button-hover: #05bd8d;
 $color__border-button-focus: #05bd8d;
 
-$color__border-input: #ccc;
+$color__background-input: #f8f8f8;
+$color__border-input: #eee;
+$color__border-input-focus: #05bd8d;
 $color__border-abbr: #666;
+
 
 $color__site-title: $color__text-main;
 $color__site-title-hover: $color__currentColor;

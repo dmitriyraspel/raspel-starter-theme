@@ -10,7 +10,7 @@ $font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
-$font__line-height-button: 1.7;
+$font__line-height-button: 1.5;
 
 $font-weight-400: 400;
 $font-weight-600: 600;
@@ -44,8 +44,11 @@ $nav--padding: calc(0.8 * 20px ); // calc(0.8 * var(--spacing-horizontal));
 
 $button-padding-vertical: 8px;
 $button-padding-horizontal: 24px;
-$button-padding-vertical_is-style-outline: $button-padding-vertical - 1px;
-$button-padding-horizontal_is-style-outline: $button-padding-horizontal - 1px; 
+$button-padding-vertical_is-style-outline: $button-padding-vertical - 2px;
+$button-padding-horizontal_is-style-outline: $button-padding-horizontal - 2px; 
+
+$input-padding-vertical: 8px;
+$input-padding-horizontal: 24px;
 
 $tablet-screen: 720px;
 $desktop-screen: 1000px;
