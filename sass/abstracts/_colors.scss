@@ -1,7 +1,6 @@
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 $color__background-sub-menu:#adc7af;
@@ -23,9 +22,12 @@ $color__footer-menu-link-hover: $color__currentColor;
 
 
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
+$color__background-button: #06d19c;
+$color__background-button-hover: #05bd8d;
+$color__border-button: #06d19c;
+$color__border-button-hover: #05bd8d;
+$color__border-button-focus: #05bd8d;
+
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 

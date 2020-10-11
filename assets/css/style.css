@@ -623,6 +623,10 @@ figure {
   margin: 1em 0;
 }
 
+figure.alignfull {
+  margin: 0;
+}
+
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -658,20 +662,30 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+  display: inline-block;
+  cursor: pointer;
   border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  color: rgba(0, 0, 0, 0.8);
-  line-height: 1;
-  padding: 0.6em 1em 0.4em;
+  border-color: #06d19c;
+  border-radius: 6px;
+  background: #06d19c;
+  color: #fff;
+  line-height: 1.7;
+  padding: 8px 24px;
+  font-weight: 400;
+  text-align: center;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: #05bd8d;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  border-color: #ccc #bbb #aaa;
+  background: #05bd8d;
+  border-color: #05bd8d;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 button:active, button:focus,
@@ -681,7 +695,8 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-  border-color: #aaa #bbb #bbb;
+  background: #05bd8d;
+  border-color: #05bd8d;
 }
 
 input[type="text"],
@@ -1590,14 +1605,13 @@ button.menu-toggle {
 }
 
 .page-content,
-.entry-content,
 .entry-summary {
-  margin: 1.5em 0 0;
+  margin: 24px 0 0;
 }
 
 .page-links {
   clear: both;
-  margin: 0 0 1.5em;
+  margin: 0 0 24px;
 }
 
 /*--------------------------------------------------------------
@@ -1607,12 +1621,75 @@ button.menu-toggle {
 --------------------------------------------- */
 /* Alignments
 --------------------------------------------- */
+/**
+ * Button
+ */
+/**
+ * Block Options
+ */
+.wp-block-button {
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.wp-block-button.wp-block-button__link,
+.wp-block-button .wp-block-button__link {
+  background: #06d19c;
+  border-radius: 6px;
+  padding: 8px 24px;
+}
+
+.wp-block-button.wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:hover {
+  background: #05bd8d;
+  border-color: #05bd8d;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.wp-block-button.wp-block-button__link:active, .wp-block-button.wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:active,
+.wp-block-button .wp-block-button__link:focus {
+  background: #05bd8d;
+  border-color: #05bd8d;
+}
+
+.wp-block-button.is-style-outline {
+  border: none;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link,
+.wp-block-button.is-style-outline .wp-block-button__link {
+  color: #06d19c;
+  background: transparent;
+  border: 1px solid #06d19c;
+  padding: 7px 23px;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:active,
+.wp-block-button.is-style-outline .wp-block-button__link:active {
+  color: #06d19c;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:hover, .wp-block-button.is-style-outline.wp-block-button__link:focus, .wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button.is-style-outline .wp-block-button__link:focus,
+.wp-block-button.is-style-outline .wp-block-button__link.has-focus {
+  color: #05bd8d;
+  border-color: #05bd8d;
+}
+
+.wp-block-button.is-style-squared .wp-block-button__link {
+  border-radius: 0;
+}
+
+/* Alignments
+--------------------------------------------- */
 .alignleft {
   /*rtl:ignore*/
   float: left;
   /*rtl:ignore*/
   margin-right: 1.5em;
-  margin-bottom: 1.5em;
 }
 
 .alignright {
@@ -1620,7 +1697,6 @@ button.menu-toggle {
   float: right;
   /*rtl:ignore*/
   margin-left: 1.5em;
-  margin-bottom: 1.5em;
 }
 
 .aligncenter {
@@ -1628,7 +1704,6 @@ button.menu-toggle {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1.5em;
 }
 
 .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator) {
@@ -1636,6 +1711,18 @@ button.menu-toggle {
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.entry-content > *:not(.alignfull) {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 720px) {
+  .entry-content > *:not(.alignfull) {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
 }
 
 .entry-content > *:first-child {
