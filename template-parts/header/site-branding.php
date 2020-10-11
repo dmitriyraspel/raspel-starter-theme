@@ -9,10 +9,10 @@
 <div class="site-branding">
 
 <?php
-	/* Show site logo ---------------------------------------------------- */
- 	if ( has_custom_logo() ) : 
-		the_custom_logo();
-	endif; ?>
+/* Show site logo ---------------------------------------------------- */
+ if ( has_custom_logo() ) : ?>
+	<div class="site-logo"><?php the_custom_logo(); ?></div>
+<?php endif; ?>
 
 <?php
 	/* Show site title ---------------------------------------------------- */
