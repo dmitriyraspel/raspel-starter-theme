@@ -93,6 +93,14 @@ if ( ! function_exists( 'raspellab_setup' ) ) :
 		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
 
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+
+		$editor_stylesheet_path = './assets/css/style-editor.css';
+
+		add_editor_style ( $editor_stylesheet_path );
+
+
 		/**
 		 * Add support for core custom logo.
 		 *
