@@ -4,8 +4,7 @@
 	float: left;
 
 	/*rtl:ignore*/
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
+	margin-right: $spacing-horizontal-1_5em;
 }
 
 .alignright {
@@ -14,21 +13,26 @@
 	float: right;
 
 	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+	margin-left: $spacing-horizontal-1_5em;
 }
 
 .aligncenter {
 	clear: both;
-
 	@include center-block;
-
-	margin-bottom: 1.5em;
 }
 
 
 .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator) {
 	@include container-content;
+}
+.entry-content > *:not(.alignfull) {
+	margin-top: $main-spacing * 1.2;
+	margin-bottom: $main-spacing * 1.2;
+
+	@media screen and (min-width: $content__width) {
+		margin-top: $main-spacing * 1.6;
+		margin-bottom: $main-spacing * 1.6;
+	}
 }
 .entry-content > *:first-child {
 	margin-top: 0;
