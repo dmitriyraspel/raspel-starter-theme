@@ -22,25 +22,26 @@
 			color: $color__social-link;
 			border-radius: 50%;
 			overflow: hidden;
-			transition: transform 0.7s linear;
+			transition: $base-transition;
 			opacity: 0.85;
 			outline: transparent;
 
 			svg {
 				fill: $color__social-link;
+				transition: $base-transition;
 			}
 
 		&:hover,
 		&:focus {
 			color: $color__social-link-hover;
-			border-color: $color__social-link-hover;
+			// border-color: $color__social-link-hover;
 			// transform: scale(1.1);
-			transform: rotate(360deg);
+			// transform: rotate(360deg);
 			opacity: 1;
 
-			svg {
-				fill: $color__social-link-hover;
-			}
+		svg {
+			// fill: $color__social-link-hover;
+		}
 		}	
 	}
 }

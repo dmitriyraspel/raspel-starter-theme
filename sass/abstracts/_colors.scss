@@ -32,13 +32,13 @@ $color__link: $color__accent;
 $color__link-visited: lighten($color__link,8%);
 $color__link-hover: darken($color__link,8%);
 
-$color__social-link: #777777;
+$color__social-link: $color__text-main;
 $color__social-link-hover: $color__accent;
 
 $color__footer-menu-link: $color__text-main;
 $color__footer-menu-link-hover: $color__accent;
 
-$color__meta-link: #777777;
+$color__meta-link: $color__text-main;
 $color__meta-link-hover: $color__accent;
 
 $color__button: $color__accent;
