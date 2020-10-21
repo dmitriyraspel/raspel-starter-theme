@@ -1,8 +1,8 @@
-@import "_dark_mode";
 @import "_pink_mode";
 @import "_green_mode";
 @import "_blue_mode";
 @import "_wb_mode";
+@import "_dark_mode";
 
 
 $color__accent: #e16a36;
@@ -57,9 +57,14 @@ $color__border-abbr: $color__text-heading;
 
 
 $color__site-title: $color__text-main;
-$color__site-title-hover: $color__text-heading;
+$color__site-title-hover: $color__accent;
 
-$color__primary-nav: #305c43;
-$color__primary-nav-hover: #305c43;
+$color__burger: $color__text-main;
+$color__primary-nav_mob: $color__text-main;
+$color__primary-nav_mob-hover: $color__text-main;
+
+$color__primary-nav_pc: $color__text-main;
+$color__primary-nav_pc-hover: $color__accent;
+
 $color__footer-link: $color__text-main;
 $color__footer-link-hover: $color__accent;

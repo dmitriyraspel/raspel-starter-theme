@@ -22,13 +22,12 @@ button.menu-toggle {
    width: 36px;
    height: 36px;
    cursor: pointer;
-   // border: 1px solid $color__primary-nav;
    position: relative;
 
    .burger__inner,
    .burger__inner::before,
    .burger__inner::after {
-      background: $color__primary-nav;
+      background: $color__burger;
       width: 24px;
       height: 2px;
       position: absolute;
@@ -63,7 +62,6 @@ button.menu-toggle {
 
 
 .toggled .burger {
-   border-color: $color__currentColor;
    
    .burger__inner {
       transform: rotate(45deg);

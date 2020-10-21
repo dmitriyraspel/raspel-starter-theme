@@ -15,7 +15,7 @@
       position: relative;
       font-family: $font__main;
       display: inline-block;
-      color: $color__primary-nav;
+      // color: $color__primary-nav;
       font-weight: $font-weight-600;
       // transition: all 0.1ms ease;
    }
@@ -46,8 +46,10 @@
       }
       a {
          font-size: 18px;
-         color: #333333;
-
+         color: $color__primary-nav_mob;
+      }
+      a:hover {
+         color: $color__primary-nav_mob-hover;
       }
    }
    .main-navigation.toggled .primary-menu-container {
@@ -70,17 +72,18 @@
       }
       a {
          font-size: $font-size-16;
+         color: $color__primary-nav_pc;
       }
       a:hover,
       a.focus {
-         color: $color__primary-nav-hover;
+         color: $color__primary-nav_pc;
       }
       
       /* hover effect */
       ul.primary-menu > li >a::after {
          display: block;
          content: "";
-         border-bottom: solid 1px $color__primary-nav-hover;
+         border-bottom: solid 1px $color__accent;
          transform: scaleX(0);
          transition: transform 0.3s ease-in-out;
       }
