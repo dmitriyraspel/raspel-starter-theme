@@ -42,12 +42,22 @@
       .social-navigation {
          a {
             border: 1px solid $color__social-link;
-            
+            transition: all 0.7s linear;
+
+            svg {
+               fill: $color__social-link-hover;
+               transition: all 0.7s linear;
+            }
             &:hover,
             &:focus {
+               transform: rotate(360deg);
                border-color: $color__social-link-hover;
+
+               svg {
+                  fill: $color__social-link;
+               }
             }
-         }  
+         }
       }
    }
 
