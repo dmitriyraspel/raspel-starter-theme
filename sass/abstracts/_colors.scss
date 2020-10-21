@@ -1,42 +1,65 @@
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
-$color__background-sub-menu:#adc7af;
-$color__background-footer: #adc7af;
+@import "_dark_mode";
+@import "_pink_mode";
+@import "_green_mode";
+@import "_blue_mode";
+@import "_wb_mode";
 
-$color__currentColor: #adc7af; // зеленый
+
+$color__accent: #e16a36;
+
+$color__background-body: #fff;
+$color__background-screen: #f1f1f1; // for screen-reader-text:focus
+
+$color__background-alt: #f7f7f7;
+$color__background-hr: $color__accent;
+$color__background-pre: $color__background-alt;
+$color__background-ins: lighten($color__accent,30%);
+
+$color__background-sub-menu:$color__background-body;
+$color__background-footer: $color__background-body; // закомментирована в стилях футера
+
+$color__currentColor: $color__accent;
+
+$color__text-main: #666;
+$color__text-heading: #111;
 
 $color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: #5a695b; //royalblue
-$color__link-visited: #5a695b; //purple
-$color__link-hover: #06d19c; //midnightblue
-$color__text-main: #404040; // #666666 #777777
+
+$color__text-input: $color__text-main;
+$color__text-input-focus: $color__text-heading;
+
+$color__link: $color__accent;
+$color__link-visited: lighten($color__link,8%);
+$color__link-hover: darken($color__link,8%);
+
 $color__social-link: #777777;
-$color__social-link-hover: #06d19c;
-$color__footer-menu-link: #666;
-$color__footer-menu-link-hover: $color__currentColor;
+$color__social-link-hover: $color__accent;
 
+$color__footer-menu-link: $color__text-main;
+$color__footer-menu-link-hover: $color__accent;
 
+$color__meta-link: #777777;
+$color__meta-link-hover: $color__accent;
 
-$color__background-button: #06d19c;
-$color__background-button-hover: #05bd8d;
-$color__border-button: #06d19c;
-$color__border-button-hover: #05bd8d;
-$color__border-button-focus: #05bd8d;
+$color__button: $color__accent;
+$color__button-hover: darken($color__button,8%);
 
-$color__background-input: #f8f8f8;
-$color__border-input: #eee;
-$color__border-input-focus: #05bd8d;
-$color__border-abbr: #666;
+$color__background-button: $color__accent;
+$color__background-button-hover: darken($color__background-button,8%);
+$color__border-button: $color__accent;
+$color__border-button-hover: darken($color__button,8%);
+$color__border-button-focus: darken($color__button,8%);
+
+$color__background-input: $color__background-alt;
+$color__border-input: lighten($color__accent,30%); // #eee
+$color__border-input-focus: $color__accent;
+$color__border-abbr: $color__text-heading;
 
 
 $color__site-title: $color__text-main;
-$color__site-title-hover: $color__currentColor;
+$color__site-title-hover: $color__text-heading;
+
 $color__primary-nav: #305c43;
 $color__primary-nav-hover: #305c43;
 $color__footer-link: $color__text-main;
-$color__footer-link-hover: $color__currentColor;
+$color__footer-link-hover: $color__accent;

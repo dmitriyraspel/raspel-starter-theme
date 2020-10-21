@@ -1,0 +1,13 @@
+
+$dark_mode-color__background: #2a2b30; // или #1d1e21; #333C44-тати.html
+
+$dark_mode-color__text-heading: #fff;
+$dark_mode-color__text-main:#cecece; // может быть слишком темный или #d9d9d9
+
+$dark_mode-color__link:#cecece;;
+$dark_mode-color__link-hover: #5a695b;
+
+$dark_mode-color__background-alt: #F7F7F7;
+
+$dark_mode-color__primary-nav: $dark_mode-color__accent;
+$dark_mode-color__primary-nav-hover: darken($dark_mode-color__accent,8%);

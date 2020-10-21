@@ -1,7 +1,5 @@
-@import "abstracts/root";
-@import "abstracts/theme_mode";
+@import "_mixins";
 @import "abstracts/colors";
-@import "abstracts/mixins";
 
 // stylelint-disable value-keyword-case
 $font__main: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -39,8 +37,8 @@ $main-spacing: 20px;
 $spacing-vertical: 24px;
 $spacing-horizontal-1_5em: 1.5em; 
 $header-margin: 20px;
-$list-padding: calc(0.6 * 20px ); // calc(0.6 * var(--spacing-horizontal));
-$nav--padding: calc(0.8 * 20px ); // calc(0.8 * var(--spacing-horizontal));
+$list-padding: calc(0.6 * 20px );
+$nav--padding: calc(0.8 * 20px );
 
 $button-padding-vertical: 8px;
 $button-padding-horizontal: 24px;

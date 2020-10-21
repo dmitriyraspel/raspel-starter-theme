@@ -1,9 +1,57 @@
-/* -- green mode -- */
-$theme-mode-green-main: #777777;
-$theme-mode-green-heading: #333333;
-$theme-mode-green-accent: #00996d;
-$theme-mode-green-link-hover: #00996d;
-$theme-mode-green-bg-green:#255852;
+.night-dark {
+   background: $dark_mode-color__background;
+   background-color: $dark_mode-color__background; 
+}
 
-/* -- pink mode -- */
-$theme-mod-pink-accent: #f86bb9;
+
+/* -- Brutal pink -- */
+.brutal-pink {
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+      color: $pink_mode-color__text-heading;
+   }
+
+}
+
+/* -- Eco green -- */
+.eco-green {
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+      color: $green_mode-color__text-heading;
+   }
+
+}
+
+/* -- ocean blue -- */
+.ocean-blue {
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+      color: $blue_mode-color__text-heading;
+   }
+
+}
+
+/* -- WB -- */
+.ocean-blue {
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+      color: $wb_mode-color__black;
+   }
+
+}
