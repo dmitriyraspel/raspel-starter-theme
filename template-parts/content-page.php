@@ -16,7 +16,6 @@
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
 		
-		<?php raspellab_post_thumbnail(); ?>
 	<?php endif; ?>
 
 	<div class="entry-content">
