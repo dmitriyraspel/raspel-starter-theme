@@ -37,7 +37,7 @@
          // background: $color__background-body;
          transform: translateY(-16px);
          transition: $base-transition;
-
+         overflow-y: auto;
          z-index: 888;
 
       }
