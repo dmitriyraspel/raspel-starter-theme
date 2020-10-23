@@ -10,7 +10,7 @@ button.menu-toggle {
    position: relative;
    overflow: hidden;
    outline: none; 
-   @media screen and (min-width: $tablet-screen) {
+   @media screen and (min-width: $tablet-screen + 1px) {
       display: none;
    }
 }
