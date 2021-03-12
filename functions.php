@@ -139,8 +139,44 @@ add_action( 'after_setup_theme', 'raspellab_content_width', 0 );
 function raspellab_widgets_init() {
 	register_sidebar(
 		array(
+			'name'          => __( 'Header-top', 'raspellab' ),
+			'id'            => 'sidebar-2',
+			'description'   => __( 'Add widgets here for displayed in the header top.', 'raspellab' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title screen-reader-text">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => __( 'Header-center', 'raspellab' ),
+			'id'            => 'sidebar-3',
+			'description'   => __( 'Add widgets here for displayed in the header center.', 'raspellab' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => __( 'Header-right', 'raspellab' ),
+			'id'            => 'sidebar-4',
+			'description'   => __( 'Add widgets here for displayed in the header right.', 'raspellab' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
 			'name'          => __( 'Footer', 'raspellab' ),
-			'id'            => 'sidebar-1',
+			'id'            => 'sidebar-5',
 			'description'   => __( 'Add widgets here for displayed in the footer.', 'raspellab' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -148,6 +184,18 @@ function raspellab_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar', 'raspellab' ),
+			'id'            => 'sidebar-1',
+			'description'   => __( 'Add widgets here for displayed in the sidebar.', 'raspellab' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
 }
 add_action( 'widgets_init', 'raspellab_widgets_init' );
 
